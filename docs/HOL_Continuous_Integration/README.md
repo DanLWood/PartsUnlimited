@@ -26,14 +26,14 @@ pushed to Visual Studio Team Services.
 
 **3. Test the CI Trigger in Visual Studio Team Services:** In this step, test the Continuous Integration build (CI) build we created by changing code in the Parts Unlimited project with Visual Studio Team Services. 
 
-### 1a: Import Source Code into your VSTS Account with Git
+### 1: Import Source Code into your VSTS Account with Git
 
-> Note: Use this to approach to use the Git command line to migrate code from GitHub to VSTS. If you use this approach, skip section 1b.
+> Note: Use this to approach to use the Git command line to migrate code from GitHub to VSTS.
 
 We want to push the application code to your Visual Studio Team Services account in
 order to use VSTS Build.
 
-> **Talking Point:** For this lab we are using the VSTS Git project. The next couple of steps will allow you to add the PartUnlimited source to the Git master repository.
+> **Talking Point:** For this lab we are using the VSTS Git project. The next couple of steps will allow you to add the PartUnlimited source to the VSTS Git repository.
 
 **1.** Clone the repository to a local directory.
 
@@ -84,76 +84,6 @@ Now you can push the code, including history, to VSTS:
 
 	git push -u origin --all	
 Congratulations, your code should now be in VSTS!
-
-### 1b: Import Source Code into your VSTS Account with Visual Studio
-
-> Note: If you already migrated using 1a (above), skip this step. 
-
-Use this approach to use the Visual Studio to migrate code from GitHub to VSTS. We want to push the application code to your Visual Studio Team Services account in order to use Build.
-
-**1.** First, we need to open Team Explorer. Go to your **account home
-page**:
-
-	https://<account>.visualstudio.com
-
-**2.** Connect to the VSTS account project using Visual Studio.
-
-![](<media/25.jpg>)
-
-> **Talking Point:** For this lab we are using the VSTS Git project. The next couple of steps will allow you to add the PartUnlimited source to the Git master repository.
-
-**3.** Navigate to [https://github.com/Microsoft/PartsUnlimited/tree/aspnet45](https://github.com/Microsoft/PartsUnlimited/tree/aspnet45) and download the sample as a zip
-
-> **Note:** For this lab is vitally IMPORTANT THAT YOU GET THE 4.5 BRANCH!
-
-**4.** Create folder and save the download to this folder.
-
-Create **Working Directory** to the following location:
-
-`C:\Source\Repos\HOL`
-
-**5.** Unzip the PartsUnlimited project, when unzipping be sure and “Unblock” the content or the deployment scripts won’t run
-
-![](<media/21.jpg>)
-
-**6.** Clone the repo of your team project to the location where you extracted the sample
-
-Set the **Working Directory** to the following location:
-
-`C:\Source\Repos\HOL`
-
-![](<media/26.jpg>)
-
-**7.** Click Open and navigate to the Parts Unlimited Project Solution in Solution Explorer
-
-![](<media/27.jpg>)
-
-**8.** Now we will add the source to the Git repo. Right click on the solution and click **Add to Source Control**.
-
-![](<media/29.jpg>)
-
-**9.** The Changes windows will appear, add in checkin text and verify the source is ready to be committed. Click on **Commit and Push**.
-
-![](<media/30.jpg>)
-
-**10.** Once the changes have been committed, click on the **Code** hub at the top of
-the page. Verify the source is in the repo.
-
-![](<media/31.jpg>)
-
-**11.** Now it is time to create a local repo to work from, in the Team Explorer, click **Branches** -> Right click on **Master** -> **New Local Branch from**... 
-
-![](<media/32.jpg>)
-
-**12.** Add in the repo name (i.e. *HOLRepo*) and click **Create Branch**
-
-![](<media/33.jpg>)
-
-> **Note:** Publishing back to VSO when cloning a repo allow the build definition to see the new repo for building out the projects.
-
-**13.** Now we need to make sure the branch is discoverable from build, click on **Publish Branch**.
-
-![](<media/34.jpg>)
 
 ### 2. Create Continuous Integration Build
 
